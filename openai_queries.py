@@ -1,7 +1,7 @@
 import openai
 import re
 
-openai.api_key = "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"
+openai.api_key = "YOUR API KEY HERE"
 
 
 def identify_url_types(url_list):
