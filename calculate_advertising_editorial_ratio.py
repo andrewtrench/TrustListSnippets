@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import math
+import re
 
 '''Calculate the ratio of ad links to content on a web page.'''
 
@@ -10,8 +11,12 @@ import math
 def get_page_content(url):
     '''Get the content of a web page.'''
     response = requests.get(url)
-    soup = BeautifulSoup(response.content, 'html.parser')
+    content = response.text
+    # Remove HTML comments - to accommodate for Clemence's point about tags being commented out
+    content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+    soup = BeautifulSoup(content, 'html.parser')
     return soup
+
 
 
 def read_ad_hostnames(file_path):
