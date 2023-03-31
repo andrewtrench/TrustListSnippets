@@ -22,3 +22,13 @@ def cal_attribute_score(ratio, ads_score, ssl, whois):
 
     score = ((((ratio / 1500) * 4) + (ads_score * 3) + (whois * 2) + (ssl * 1)) * 10)
     return score
+
+def cal_human_quality_score(quality_contact, policy_content, quality_authors, quality_ad_indicator, site_subjective_risk):
+    '''Calculate the quality score of a URL based on human review with appropriate weightings.All the scores here are
+    binary (0 or 1) But different weightings are applied. The subjective risk score is a negative score to ensure it
+    has a significant impact on the quality score. This could be weighted even higher ie -2 etc but the other
+    weightings would then be adjusted down so that all weights add up to a score our of 10.'''
+
+    human_quality_score = (((quality_contact * 2) + (policy_content * 4) + (quality_authors * 2) + (quality_ad_indicator * 2) + (site_subjective_risk*-1)) * 10)
+
+    return human_quality_score
