@@ -9,10 +9,10 @@ import io
 import time
 
 '''Code that uses Selenium to headlessly open a URL and scroll to the bottom of a url and takes a screenshot of the 
-entire page and then calculates the total area of advertising versus the size of the web page.
-Note: The chrome driver must be installed and the path to the driver must be specified in the code below.
-Including the code here because it is interesting appraoch but big challenge is getting the the ads to fire in headless mode.
-The full screen imagegrab part of it could be useful for one stage of the funnel where screengrabs are suggested'''
+entire page and then calculates the total area of advertising versus the size of the web page. Note: The chrome 
+driver must be installed and the path to the driver must be specified in the code below. Including the code here 
+because it is interesting approach but big challenge is getting the the ads to fire in headless mode. The full screen 
+image grab part of it could be useful for one stage of the funnel where screeng rabs are suggested'''
 
 # URL of the home page to analyze
 url = "http://gossipinfo.com.ng"
